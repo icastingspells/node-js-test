@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тестовое приложение</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #f4f5f7;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 640px;
+      width: 100%;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #4a5057;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #0b6b3a;
+      background: #e6f6ec;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 13px;
+      color: #8b929b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #16181d;
+        color: #e6e8eb;
+      }
+
+      main {
+        background: #1f2229;
+        box-shadow: none;
+      }
+
+      p {
+        color: #b3b9c2;
+      }
+
+      .badge {
+        color: #6ee7a0;
+        background: #16352a;
+      }
+
+      footer {
+        border-top-color: #2c313a;
+        color: #7c838d;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">Node.js</span>
+    <h1>Привет! Это тестовая страница</h1>
+    <p>
+      Это маленькое приложение на Node.js без внешних зависимостей.
+      Сервер отдаёт одну HTML-страницу, которую вы сейчас читаете.
+    </p>
+    <p>
+      Запуск: <code>npm start</code>, затем откройте
+      <code>http://localhost:3000</code>.
+    </p>
+    <footer id="footer"></footer>
+  </main>
+
+  <script>
+    // Небольшая деталь, чтобы страница была не совсем статичной
+    document.getElementById("footer").textContent =
+      "Страница загружена: " + new Date().toLocaleString("ru-RU");
+  </script>
+</body>
+</html>
